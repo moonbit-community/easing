@@ -1,0 +1,7 @@
+{
+  "name": "hackwaly/easing",
+  "version": "0.1.0",
+  "description": "Easing functions for smooth animation.",
+  "license": "BSD-3-Clause",
+  "keywords": ["d3", "ease", "easing", "animation", "transition"]
+}

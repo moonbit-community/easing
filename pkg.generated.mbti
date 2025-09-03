@@ -1,0 +1,148 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "hackwaly/easing"
+
+// Values
+fn assert_in_delta(Double, Double, epsilon? : Double) -> Unit
+
+fn back_in(Double, overshoot? : Double) -> Double
+
+fn back_in_out(Double, overshoot? : Double) -> Double
+
+fn back_out(Double, overshoot? : Double) -> Double
+
+fn bounce_in(Double) -> Double
+
+fn bounce_in_out(Double) -> Double
+
+fn bounce_out(Double) -> Double
+
+fn circle_in(Double) -> Double
+
+fn circle_in_out(Double) -> Double
+
+fn circle_out(Double) -> Double
+
+fn cubic_in(Double) -> Double
+
+fn cubic_in_out(Double) -> Double
+
+fn cubic_out(Double) -> Double
+
+fn ease_back(Double) -> Double
+
+fn ease_back_in(Double) -> Double
+
+fn ease_back_in_out(Double) -> Double
+
+fn ease_back_out(Double) -> Double
+
+fn ease_bounce(Double) -> Double
+
+fn ease_bounce_in(Double) -> Double
+
+fn ease_bounce_in_out(Double) -> Double
+
+fn ease_bounce_out(Double) -> Double
+
+fn ease_circle(Double) -> Double
+
+fn ease_circle_in(Double) -> Double
+
+fn ease_circle_in_out(Double) -> Double
+
+fn ease_circle_out(Double) -> Double
+
+fn ease_cubic(Double) -> Double
+
+fn ease_cubic_in(Double) -> Double
+
+fn ease_cubic_in_out(Double) -> Double
+
+fn ease_cubic_out(Double) -> Double
+
+fn ease_elastic(Double) -> Double
+
+fn ease_elastic_in(Double) -> Double
+
+fn ease_elastic_in_out(Double) -> Double
+
+fn ease_elastic_out(Double) -> Double
+
+fn ease_exp(Double) -> Double
+
+fn ease_exp_in(Double) -> Double
+
+fn ease_exp_in_out(Double) -> Double
+
+fn ease_exp_out(Double) -> Double
+
+fn ease_linear(Double) -> Double
+
+fn ease_poly(Double) -> Double
+
+fn ease_poly_in(Double) -> Double
+
+fn ease_poly_in_out(Double) -> Double
+
+fn ease_poly_out(Double) -> Double
+
+fn ease_quad(Double) -> Double
+
+fn ease_quad_in(Double) -> Double
+
+fn ease_quad_in_out(Double) -> Double
+
+fn ease_quad_out(Double) -> Double
+
+fn ease_sin(Double) -> Double
+
+fn ease_sin_in(Double) -> Double
+
+fn ease_sin_in_out(Double) -> Double
+
+fn ease_sin_out(Double) -> Double
+
+fn elastic_in(Double, amplitude? : Double, period? : Double) -> Double
+
+fn elastic_in_out(Double, amplitude? : Double, period? : Double) -> Double
+
+fn elastic_out(Double, amplitude? : Double, period? : Double) -> Double
+
+fn exp_in(Double) -> Double
+
+fn exp_in_out(Double) -> Double
+
+fn exp_out(Double) -> Double
+
+fn linear(Double) -> Double
+
+fn poly_in(Double, exponent? : Double) -> Double
+
+fn poly_in_out(Double, exponent? : Double) -> Double
+
+fn poly_out(Double, exponent? : Double) -> Double
+
+fn quad_in(Double) -> Double
+
+fn quad_in_out(Double) -> Double
+
+fn quad_out(Double) -> Double
+
+fn sin_in(Double) -> Double
+
+fn sin_in_out(Double) -> Double
+
+fn sin_out(Double) -> Double
+
+fn test_range(String, (Double) -> Double, Array[(Double, Double)]) -> Unit
+
+fn tpmt(Double) -> Double
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+
