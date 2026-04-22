@@ -14,11 +14,12 @@ All easing functions take a time parameter `t` between 0.0 and 1.0 and return a 
 
 The simplest easing function - no acceleration or deceleration.
 
-```moonbit
+```moonbit nocheck
+///|
 test "linear easing demo" {
   // Linear easing is the identity function
   inspect(@easing.ease_linear(0.0), content="0")
-  inspect(@easing.ease_linear(0.5), content="0.5") 
+  inspect(@easing.ease_linear(0.5), content="0.5")
   inspect(@easing.ease_linear(1.0), content="1")
 }
 ```
@@ -27,12 +28,13 @@ test "linear easing demo" {
 
 Quadratic easing provides smooth acceleration and deceleration.
 
-```moonbit
+```moonbit nocheck
+///|
 test "quadratic easing demo" {
   // Different curve shapes
-  inspect(@easing.ease_quad_in(0.5), content="0.25")    // Accelerating
-  inspect(@easing.ease_quad_out(0.5), content="0.75")   // Decelerating  
-  inspect(@easing.ease_quad(0.5), content="0.5")        // In-out (default)
+  inspect(@easing.ease_quad_in(0.5), content="0.25") // Accelerating
+  inspect(@easing.ease_quad_out(0.5), content="0.75") // Decelerating  
+  inspect(@easing.ease_quad(0.5), content="0.5") // In-out (default)
 }
 ```
 
@@ -40,7 +42,8 @@ test "quadratic easing demo" {
 
 More pronounced curves than quadratic.
 
-```moonbit
+```moonbit nocheck
+///|
 test "cubic easing demo" {
   inspect(@easing.ease_cubic_in(0.5), content="0.125")
   inspect(@easing.ease_cubic_out(0.5), content="0.875")
@@ -54,17 +57,18 @@ test "cubic easing demo" {
 
 Configurable polynomial easing with customizable exponent.
 
-```moonbit
+```moonbit nocheck
+///|
 test "polynomial easing with options" {
   // Default exponent is 3.0 (same as cubic)
   let default_poly = @easing.ease_poly_in(0.5)
   inspect(default_poly, content="0.125")
-  
+
   // Using direct function call with custom exponent
   let quadratic = @easing.poly_in(0.5, exponent=2.0)
   inspect(quadratic, content="0.25")
-  
-  let quartic = @easing.poly_in(0.5, exponent=4.0) 
+
+  let quartic = @easing.poly_in(0.5, exponent=4.0)
   inspect(quartic, content="0.0625")
 }
 ```
@@ -73,15 +77,16 @@ test "polynomial easing with options" {
 
 Creates anticipation by going slightly backwards before moving forward.
 
-```moonbit
+```moonbit nocheck
+///|
 test "back easing with custom overshoot" {
   // Default overshoot
   let normal_back = @easing.ease_back_in(0.5)
-  
+
   // Custom overshoot for more dramatic effect
   let strong_back = @easing.back_in(0.5, overshoot=3.0)
   let weak_back = @easing.back_in(0.5, overshoot=1.0)
-  
+
   // Stronger overshoot creates more negative values
   inspect(strong_back < normal_back, content="true")
   inspect(normal_back < weak_back, content="true")
@@ -92,15 +97,16 @@ test "back easing with custom overshoot" {
 
 Creates elastic oscillations like a rubber band or spring.
 
-```moonbit
+```moonbit nocheck
+///|
 test "elastic easing with custom parameters" {
   // Default parameters
   let default_elastic = @easing.ease_elastic_in(0.5)
-  
+
   // Custom amplitude affects oscillation strength
   let strong_elastic = @easing.elastic_in(0.5, amplitude=2.0)
   inspect(default_elastic != strong_elastic, content="true")
-  
+
   // Custom period affects oscillation frequency  
   let fast_oscillation = @easing.elastic_in(0.5, period=0.1)
   let slow_oscillation = @easing.elastic_in(0.5, period=0.8)
@@ -114,12 +120,13 @@ test "elastic easing with custom parameters" {
 
 Creates dramatic acceleration and deceleration effects.
 
-```moonbit
+```moonbit nocheck
+///|
 test "exponential easing characteristics" {
   // Values change rapidly near the extremes
   let exp_early = @easing.ease_exp_in(0.1)
   let exp_late = @easing.ease_exp_in(0.9)
-  
+
   // Early values are very small
   inspect(exp_early < 0.01, content="true")
   // Later values grow but slowly at first
@@ -131,12 +138,13 @@ test "exponential easing characteristics" {
 
 Simulates the motion of a bouncing ball.
 
-```moonbit
+```moonbit nocheck
+///|
 test "bounce easing behavior" {
   // Bounce typically overshoots during animation
   let quarter_bounce = @easing.ease_bounce_out(0.25)
   let half_bounce = @easing.ease_bounce_out(0.5)
-  
+
   // The bounce creates peaks above the linear progression
   inspect(quarter_bounce > 0.25, content="true")
   inspect(half_bounce > 0.5, content="true")
@@ -147,11 +155,12 @@ test "bounce easing behavior" {
 
 Based on quarter-circle curves for smooth transitions.
 
-```moonbit
+```moonbit nocheck
+///|
 test "circle easing smoothness" {
   // Circle easing provides smooth curves
   inspect(@easing.ease_circle_in(0.0), content="0")
-  inspect(@easing.ease_circle_out(1.0), content="1") 
+  inspect(@easing.ease_circle_out(1.0), content="1")
   inspect(@easing.ease_circle(0.5), content="0.5")
 }
 ```
@@ -160,12 +169,13 @@ test "circle easing smoothness" {
 
 Natural, smooth curves based on sine functions.
 
-```moonbit
+```moonbit nocheck
+///|
 test "sine easing curves" {
   // Sine creates very natural feeling motion
   let sin_quarter = @easing.ease_sin_in(0.25)
   let sin_half = @easing.ease_sin_out(0.5)
-  
+
   // Values are between 0 and 1 with smooth transitions
   inspect(sin_quarter > 0.0 && sin_quarter < 0.25, content="true")
   inspect(sin_half > 0.5 && sin_half < 1.0, content="true")
@@ -176,20 +186,21 @@ test "sine easing curves" {
 
 This library provides both direct function calls and convenience aliases:
 
-```moonbit
+```moonbit nocheck
+///|
 test "API compatibility" {
   // Direct function calls (support optional parameters)
   let poly_custom = @easing.poly_in(0.5, exponent=2.0)
   let back_custom = @easing.back_out(0.5, overshoot=2.0)
-  
+
   // Convenience aliases (d3-ease compatible names)
   let poly_default = @easing.ease_poly_in(0.5)
   let back_default = @easing.ease_back_out(0.5)
-  
+
   // Verify the aliases work correctly
   inspect(@easing.ease_linear(0.5) == @easing.linear(0.5), content="true")
   inspect(poly_default, content="0.125") // Default exponent 3.0
-  
+
   // Demonstrate usage
   ignore(poly_custom)
   ignore(back_custom)

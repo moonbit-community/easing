@@ -1,9 +1,0 @@
-{
-  "is_main": true,
-  "import": [
-    {
-      "path": "hackwaly/easing",
-      "alias": "easing"
-    }
-  ]
-}

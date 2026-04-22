@@ -194,4 +194,3 @@ test "optional parameters" {
   assert_not_eq(elastic_in(0.5), elastic_in(0.5, amplitude=2.0)) // Custom amplitude
   assert_not_eq(elastic_in(0.5), elastic_in(0.5, period=0.5)) // Custom period
 }
-

@@ -25,8 +25,8 @@ fn compute_phase(amplitude : Double, period : Double) -> Double {
 /// @param period: oscillation period (default: 0.3)
 pub fn elastic_in(
   t : Double,
-  amplitude~ : Double = default_amplitude,
-  period~ : Double = default_period,
+  amplitude? : Double = default_amplitude,
+  period? : Double = default_period,
 ) -> Double {
   let a = if amplitude > 1.0 { amplitude } else { 1.0 }
   let p = period / tau
@@ -42,8 +42,8 @@ pub fn elastic_in(
 /// @param period: oscillation period (default: 0.3)
 pub fn elastic_out(
   t : Double,
-  amplitude~ : Double = default_amplitude,
-  period~ : Double = default_period,
+  amplitude? : Double = default_amplitude,
+  period? : Double = default_period,
 ) -> Double {
   let a = if amplitude > 1.0 { amplitude } else { 1.0 }
   let p = period / tau
@@ -58,8 +58,8 @@ pub fn elastic_out(
 /// @param period: oscillation period (default: 0.3)
 pub fn elastic_in_out(
   t : Double,
-  amplitude~ : Double = default_amplitude,
-  period~ : Double = default_period,
+  amplitude? : Double = default_amplitude,
+  period? : Double = default_period,
 ) -> Double {
   let a = if amplitude > 1.0 { amplitude } else { 1.0 }
   let p = period / tau
