@@ -2,7 +2,11 @@
 
 ///|
 /// Assert that two floating point numbers are approximately equal within epsilon
-pub fn assert_in_delta(actual : Double, expected : Double, epsilon~ : Double = 0.000001) -> Unit {
+pub fn assert_in_delta(
+  actual : Double,
+  expected : Double,
+  epsilon? : Double = 0.000001,
+) -> Unit {
   if (actual - expected).abs() > epsilon {
     abort("Expected \{actual} to be within \{epsilon} of \{expected}")
   }

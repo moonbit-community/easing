@@ -1,0 +1,7 @@
+import {
+  "hackwaly/easing" @easing,
+}
+
+options(
+  is_main: true,
+)
