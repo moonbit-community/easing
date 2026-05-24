@@ -14,7 +14,7 @@ All easing functions take a time parameter `t` between 0.0 and 1.0 and return a 
 
 The simplest easing function - no acceleration or deceleration.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "linear easing demo" {
   // Linear easing is the identity function
@@ -28,7 +28,7 @@ test "linear easing demo" {
 
 Quadratic easing provides smooth acceleration and deceleration.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "quadratic easing demo" {
   // Different curve shapes
@@ -42,7 +42,7 @@ test "quadratic easing demo" {
 
 More pronounced curves than quadratic.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "cubic easing demo" {
   inspect(@easing.ease_cubic_in(0.5), content="0.125")
@@ -57,7 +57,7 @@ test "cubic easing demo" {
 
 Configurable polynomial easing with customizable exponent.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "polynomial easing with options" {
   // Default exponent is 3.0 (same as cubic)
@@ -77,7 +77,7 @@ test "polynomial easing with options" {
 
 Creates anticipation by going slightly backwards before moving forward.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "back easing with custom overshoot" {
   // Default overshoot
@@ -97,7 +97,7 @@ test "back easing with custom overshoot" {
 
 Creates elastic oscillations like a rubber band or spring.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "elastic easing with custom parameters" {
   // Default parameters
@@ -120,7 +120,7 @@ test "elastic easing with custom parameters" {
 
 Creates dramatic acceleration and deceleration effects.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "exponential easing characteristics" {
   // Values change rapidly near the extremes
@@ -138,7 +138,7 @@ test "exponential easing characteristics" {
 
 Simulates the motion of a bouncing ball.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "bounce easing behavior" {
   // Bounce typically overshoots during animation
@@ -155,7 +155,7 @@ test "bounce easing behavior" {
 
 Based on quarter-circle curves for smooth transitions.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "circle easing smoothness" {
   // Circle easing provides smooth curves
@@ -169,7 +169,7 @@ test "circle easing smoothness" {
 
 Natural, smooth curves based on sine functions.
 
-```moonbit nocheck
+```mbt check
 ///|
 test "sine easing curves" {
   // Sine creates very natural feeling motion
@@ -186,7 +186,7 @@ test "sine easing curves" {
 
 This library provides both direct function calls and convenience aliases:
 
-```moonbit nocheck
+```mbt check
 ///|
 test "API compatibility" {
   // Direct function calls (support optional parameters)
