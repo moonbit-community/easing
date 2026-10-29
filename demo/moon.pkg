@@ -1,7 +1,5 @@
 import {
-  "hackwaly/easing" @easing,
+  "hackwaly/easing",
 }
 
-options(
-  is_main: true,
-)
+pkgtype(kind: "executable")
